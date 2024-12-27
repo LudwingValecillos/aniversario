@@ -3,7 +3,6 @@
 import Header from "@/components/Header"
 import MessageWall from "@/components/MessageWall"
 import PhotoGallery from "@/components/PhotoGallery"
-import Timeline from "@/components/Timeline"
 import WelcomeMessage from "@/components/WelcomeMessage"
 import { motion } from "framer-motion"
 import Heart from "@/components/Heart"
