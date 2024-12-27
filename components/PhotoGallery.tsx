@@ -79,9 +79,9 @@ export default function PhotoGallery() {
         
         >
         {photos.map((photo, index) => (
-          <div data-aos="fade-up-right" >
+          <div key={`photo-container-${index}`} data-aos="fade-up-right" >
           <motion.div
-            key={index}
+            key={`photo-${index}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
