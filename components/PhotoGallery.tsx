@@ -31,8 +31,7 @@ import img32 from "../app/imgs/32.jpg";
 import img33 from "../app/imgs/33.jpg";
 import img34 from "../app/imgs/34.jpg";
 
-
-export default function PhotoGallery() {
+export default function PhotoGallery(): React.JSX.Element {
   const photos = [
     img2,
     img3,
@@ -76,23 +75,22 @@ export default function PhotoGallery() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        
-        >
+      >
         {photos.map((photo, index) => (
-          <div key={`photo-container-${index}`} data-aos="fade-up-right" >
-          <motion.div
-            key={`photo-${index}`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Image
-              src={photo}
-              alt={`Momento especial ${index + 1}`}
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg"
-            />
-          </motion.div>
+          <div key={`photo-container-${index}`} data-aos="fade-up-right">
+            <motion.div
+              key={`photo-${index}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Image
+                src={photo}
+                alt={`Momento especial ${index + 1}`}
+                width={300}
+                height={300}
+                className="rounded-lg shadow-lg"
+              />
+            </motion.div>
           </div>
         ))}
       </motion.div>
