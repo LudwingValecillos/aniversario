@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Countdown() {
+export default function Countdown(): React.JSX.Element {
+  const targetDate = useMemo(() => new Date('2024-12-27'), []); // Memoize the target date
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0
   });
-
-  const targetDate = new Date('2024-12-27'); // Replace with your anniversary date
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,7 +27,7 @@ export default function Countdown() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]); // Add targetDate as a dependency
 
   return (
     <motion.div 

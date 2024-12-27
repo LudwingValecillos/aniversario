@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-export default function MessageWall() {
-  const [messages, setMessages] = useState([])
-  const [newMessage, setNewMessage] = useState('')
+export default function MessageWall(): React.JSX.Element {
+  const [messages, setMessages] = useState<string[]>([])
+  const [newMessage, setNewMessage] = useState<string>('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (newMessage.trim()) {
       setMessages([...messages, newMessage])
@@ -49,4 +49,3 @@ export default function MessageWall() {
     </section>
   )
 }
-
